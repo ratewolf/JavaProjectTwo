@@ -14,5 +14,11 @@ public class ArrayTest03 {
         for (int i = 0; i < ary.length; i++) {
             System.out.print(ary[i] + " ");
         }
+
+        System.out.println();
+
+        for (int data : ary) {
+            System.out.print(data + " ");
+        }
     }
 }
