@@ -1,7 +1,7 @@
 package book_management.domain;
 
 public class Book {
-    private int isbn;
+    private String isbn;
     private String name;
     private String author;
     private int price;
@@ -9,11 +9,35 @@ public class Book {
     private String publish_name;
     private String category_name;
 
-    public int getIsbn() {
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getCategory_name() {
+        return category_name;
+    }
+
+    public void setCategory_name(String category_name) {
+        this.category_name = category_name;
+    }
+
+    public int getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(int inventory) {
+        this.inventory = inventory;
+    }
+
+    public String getIsbn() {
         return isbn;
     }
 
-    public void setIsbn(int isbn) {
+    public void setIsbn(String isbn) {
         this.isbn = isbn;
     }
 
@@ -25,14 +49,6 @@ public class Book {
         this.name = name;
     }
 
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
     public int getPrice() {
         return price;
     }
@@ -41,27 +57,11 @@ public class Book {
         this.price = price;
     }
 
-    public int getInventory() {
-        return inventory;
-    }
-
-    public void setInventory(int inventory) {
-        this.inventory = inventory;
-    }
-
     public String getPublish_name() {
         return publish_name;
     }
 
     public void setPublish_name(String publish_name) {
         this.publish_name = publish_name;
-    }
-
-    public String getCategory_name() {
-        return category_name;
-    }
-
-    public void setCategory_name(String category_name) {
-        this.category_name = category_name;
     }
 }
