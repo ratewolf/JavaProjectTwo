@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class JDBCConnector {
     private static final String DRIVER_PATH = "oracle.jdbc.driver.OracleDriver";
-    private static final String URL = "jdbc:oracle:thin:@localhost:1522/xe";
+    private static final String URL = "jdbc:oracle:thin:@localhost:1521/xe";
     private static final String USER_NAME = "C##aisoft";
     private static final String PASSWORD = "1234";
     private static Connection con;

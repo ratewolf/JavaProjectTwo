@@ -9,14 +9,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class BookRepository {
-    ArrayList<Book> bookList = new ArrayList<>();
+    ArrayList<Book> bookList;
 
     public ArrayList<Book> select (String searchWord, int selectedIndex){
         bookList = new ArrayList<>();
 
-        String[] columnName = {"name", "publish_name", "author_name"};
+        String[] columnName = {"name", "publish_name", "author"};
 
-        String sql = "SELECT isbn, name, author_name, price, inventory, category_name,  publish_name from book b, category c, publish p " +
+        String sql = "SELECT isbn, name, author, price, inventory, category_name,  publish_name from book b, category c, publish p " +
                 "where b.category_id = c.category_id and b.publish_id = p.publish_id " +
                 " and " + columnName[selectedIndex] + " like ?";
         try (Connection con = JDBCConnector.getConnection();
@@ -27,7 +27,7 @@ public class BookRepository {
                     Book book = new Book();
                     book.setIsbn(rs.getString("isbn"));
                     book.setName(rs.getString("name"));
-                    book.setAuthor(rs.getString("author_name"));
+                    book.setAuthor(rs.getString("author"));
                     book.setPrice(rs.getInt("price"));
                     book.setInventory(rs.getInt("inventory"));
                     book.setCategory_name(rs.getString("category_name"));

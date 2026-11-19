@@ -4,6 +4,7 @@ import book_management.domain.Book;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumnModel;
 import java.awt.*;
 import java.util.ArrayList;
 
@@ -14,7 +15,7 @@ public class BookSearchPan extends JPanel {
     JComboBox <String> combo = new JComboBox<String>(comboStr);
     JTable table;
     DefaultTableModel model;
-    String[] tableHeader = {"도서 번호", "도서명", "출판사",  "저자명", "도서가격", "재고량", "카테고리"};
+    String[] tableHeader = {"도서번호", "도서명", "저자명",  "출판사", "가격", "재고량", "카테고리"};
     ArrayList<Book> bookList;
     String searchWord;
 
@@ -39,6 +40,15 @@ public class BookSearchPan extends JPanel {
             }
         };
         table = new JTable(model);
+        TableColumnModel tcm = table.getColumnModel();
+
+        tcm.getColumn(0).setPreferredWidth(75);
+        tcm.getColumn(1).setPreferredWidth(200);
+        tcm.getColumn(2).setPreferredWidth(150);
+        tcm.getColumn(3).setPreferredWidth(100);
+        tcm.getColumn(4).setPreferredWidth(75);
+        tcm.getColumn(5).setPreferredWidth(100);
+
         JScrollPane scroll = new JScrollPane(table);
         putSearchResult();
 
